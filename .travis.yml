@@ -7,5 +7,4 @@ before_install:
 
 
 script:
-  # Run test; program should return 'code 0' to indicate success 
   - docker run udemy_frontend_dev npm run test -- --coverage
