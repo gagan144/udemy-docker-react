@@ -1,0 +1,18 @@
+# Build development docker
+docker build -f Dockerfile.dev -t udemy_frontend .
+
+# Run
+docker run -p 3000:3000 udemy_frontend
+docker run -p 3000:3000 -v /app/node_modules -v D:/Projects/Docker/dockers/udemy_prod_workflow/frontend:/app udemy_frontend
+
+
+# ---- Docker compose ----------
+docker-compose up
+
+
+# Run test
+docker run -it --name frontendtest frontend_web npm run test
+
+
+# ---------- Multi step docker ------
+docker build -t udemy_frontend_multi .
