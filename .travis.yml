@@ -5,9 +5,11 @@ sudo: required
 services: 
   - docker
 
+# Build docker image
 before_install:
   - docker build -t gagan144/udemy-docker-react -f Dockerfile.dev .
 
+# Run Tests
 script:
   # - docker run -e CI=true gagan144/udemy-docker-react npm run test -- --coverage
   - docker run -e CI=true gagan144/udemy-docker-react npm run test
