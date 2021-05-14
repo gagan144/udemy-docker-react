@@ -12,6 +12,8 @@ RUN npm run build
 # Copy build files into nginx based docker image
 FROM nginx
 
+# Open port: Only for AWS not for development
+EXPOSE 80
+
+# Copy build files
 COPY  --from=builder /app/build /usr/share/nginx/html
-
-
